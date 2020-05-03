@@ -13,12 +13,12 @@ class QuestionCard extends Component {
           {questionsByTag.items.map((ele, i) => {
             return (
               <div className="col-4 my-4" key = {i}>
-                <div className="card card-shadow" style={{ width: "18rem", height: "18rem" }}>
+                <div className="card bg-dark text-white card-shadow" style={{ width: "18rem", height: "18rem" }}>
                   <div className="card-body">
                     <h5 className="card-title">Question {i + 1} </h5>
                     <p className="card-text">{ele.title}</p>
                     <p className="card-text">Created at: {ele.creation_date}</p>
-                    <a href={ele.link} target="_blank" className="card-link">
+                    <a href={ele.link} target="_blank" className="bg-light mt-2 btn">
                       Get Answer
                     </a>
                   </div>
