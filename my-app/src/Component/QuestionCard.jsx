@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 class QuestionCard extends Component {
   render() {
-    const { questionsByTag, isLoading, isData } = this.props;
+    const { questionsByTag, isLoading, } = this.props;
 
     return isLoading ? (
       <h1>spinner</h1>
@@ -18,7 +18,7 @@ class QuestionCard extends Component {
                     <h5 className="card-title">Question {i + 1} </h5>
                     <p className="card-text">{ele.title}</p>
                     <p className="card-text">Created at: {ele.creation_date}</p>
-                    <a href={ele.link} target="_blank" className="bg-light mt-2 btn">
+                    <a href={ele.link} target="_blank" rel="noopener noreferrer" className="bg-light mt-2 btn">
                       Get Answer
                     </a>
                   </div>
@@ -33,9 +33,8 @@ class QuestionCard extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  isLoading: state.isLoading,
-  isData: state.isData,
-  questionsByTag: state.questionsByTag,
+  isLoading: state.top10QsByTagreducer.isLoading,
+  questionsByTag: state.top10QsByTagreducer.questionsByTag,
 });
 
 export default connect(mapStateToProps, null)(QuestionCard);

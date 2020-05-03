@@ -13,7 +13,7 @@ const initialState = {
 
 }
 
-const reducer = (state = initialState, action) => {
+const top10QsByTagreducer = (state = initialState, action) => {
     switch(action.type) {
         case FETCH_QUESTIONS_REQUEST:
             return {
@@ -42,4 +42,4 @@ const reducer = (state = initialState, action) => {
     }
 }
 
-export default reducer;
+export default top10QsByTagreducer;
